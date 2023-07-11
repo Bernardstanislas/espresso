@@ -1,2 +1,14 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+  import {supabase} from "../lib"
+
+  const entriesPromise =  supabase.from("entries").select();
+console.log(entriesPromise)
+
+</script>
+{#await entriesPromise then data}
+<ul>
+{#each data.data as row}
+<li>{row.content}</li>
+{/each}
+</ul>
+{/await}
