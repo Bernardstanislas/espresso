@@ -1,9 +1,13 @@
 <script lang="ts">
+	import { formatRelative } from 'date-fns';
+
 	export let data;
 </script>
 
-<ul>
+<ul class="divide-y divide-slate-100">
 	{#each data?.shots || [] as shot}
-		<li>{shot.created_at}</li>
+		<li>
+			{formatRelative(new Date(shot.created_at), new Date())}
+		</li>
 	{/each}
 </ul>
