@@ -1,18 +1,19 @@
 <script>
 	import { enhance } from '$app/forms';
+	export let data;
 </script>
 
 <form method="POST" use:enhance>
 	<div>
 		<label>
 			Quantity in
-			<input name="quantity_in" type="number" />
+			<input name="quantity_in" type="number" value={data.latestEntry?.quantity_in} />
 		</label>
 	</div>
 	<div>
 		<label>
 			Quantity out
-			<input name="quantity_out" type="number" />
+			<input name="quantity_out" type="number" value={data.latestEntry?.quantity_out} />
 		</label>
 		<label>
 			Duration
@@ -22,7 +23,7 @@
 	<div>
 		<label>
 			Grind size
-			<input name="grind_size" type="number" />
+			<input name="grind_size" type="number" value={data.latestEntry?.grind_size} />
 		</label>
 	</div>
 	<div>
