@@ -1,22 +1,8 @@
-<script lang="ts">
-	import { supabase } from '../../lib';
-
-	const handleSumbit = (event: SubmitEvent) => {
-		const formData = new FormData(event.target);
-		supabase.from('entries').insert({
-			quantity_in: formData.get('quantity_in'),
-			quantity_out: formData.get('quantity_out'),
-			grind_size: formData.get('grind_size'),
-			extraction: formData.get('extraction'),
-			puck: formData.get('puck'),
-			grade: formData.get('grade'),
-			observation: formData.get('observation'),
-			duration: formData.get('duration')
-		});
-	};
+<script>
+	import { enhance } from '$app/forms';
 </script>
 
-<form on:submit|preventDefault={handleSumbit}>
+<form method="POST" use:enhance>
 	<div>
 		<label>
 			Quantity in
