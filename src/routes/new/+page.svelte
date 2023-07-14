@@ -7,36 +7,36 @@
 	<div>
 		<label>
 			Quantity in
-			<input name="quantity_in" type="number" value={data.latestShot?.quantity_in} />
+			<input name="quantity_in" type="number" value={data.latestShot?.quantity_in} required />
 		</label>
 	</div>
 	<div>
 		<label>
 			Quantity out
-			<input name="quantity_out" type="number" value={data.latestShot?.quantity_out} />
+			<input name="quantity_out" type="number" value={data.latestShot?.quantity_out} required />
 		</label>
 		<label>
 			Duration
-			<input name="duration" type="number" />
+			<input name="duration" type="number" required />
 		</label>
 	</div>
 	<div>
 		<label>
 			Grind size
-			<input name="grind_size" type="number" value={data.latestShot?.grind_size} />
+			<input name="grind_size" type="number" value={data.latestShot?.grind_size} required />
 		</label>
 	</div>
 	<div>
 		<label>
 			Extraction
-			<select name="extraction">
+			<select name="extraction" required>
 				<option value="1">OK</option>
 				<option value="2">KO</option>
 			</select>
 		</label>
 		<label>
 			Puck
-			<select name="puck">
+			<select name="puck" required>
 				<option value="1">OK</option>
 				<option value="2">KO</option>
 			</select>
@@ -45,13 +45,13 @@
 	<div>
 		<label>
 			Grade
-			<input name="grade" type="number" />
+			<input name="grade" type="number" required />
 		</label>
 	</div>
 	<div>
 		<label>
 			Observation
-			<textarea name="observation" />
+			<textarea name="observation" required />
 		</label>
 	</div>
 	<button type="submit">Save</button>
