@@ -1,13 +1,9 @@
 <script lang="ts">
-	import { supabase } from '../lib';
-
-	let entriesPromise = supabase.from('entries').select();
+	export let data;
 </script>
 
-{#await entriesPromise then data}
-	<ul>
-		{#each data.data as row}
-			<li>{row.created_at}</li>
-		{/each}
-	</ul>
-{/await}
+<ul>
+	{#each data?.entries || [] as row}
+		<li>{row.created_at}</li>
+	{/each}
+</ul>
