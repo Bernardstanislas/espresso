@@ -4,7 +4,7 @@ import { redirect } from '@sveltejs/kit';
 export const actions = {
 	default: async ({ request }) => {
 		const data = await request.formData();
-		await supabase.from('entries').insert({
+		await supabase.from('shots').insert({
 			quantity_in: data.get('quantity_in'),
 			quantity_out: data.get('quantity_out'),
 			grind_size: data.get('grind_size'),

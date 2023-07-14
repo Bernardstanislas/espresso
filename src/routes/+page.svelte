@@ -3,7 +3,7 @@
 </script>
 
 <ul>
-	{#each data?.entries || [] as row}
-		<li>{row.created_at}</li>
+	{#each data?.shots || [] as shot}
+		<li>{shot.created_at}</li>
 	{/each}
 </ul>

@@ -1,17 +1,17 @@
 import { supabase } from '$lib';
 
 export async function load() {
-	const latestEntry = await supabase
-		.from('entries')
+	const latestShot = await supabase
+		.from('shots')
 		.select('created_at, quantity_in, quantity_out, grind_size')
 		.order('created_at', { ascending: false })
 		.limit(1);
 
-	if (latestEntry.count === 0 || latestEntry.data === null) {
+	if (latestShot.count === 0 || latestShot.data === null) {
 		return;
 	}
 
 	return {
-		latestEntry: latestEntry.data[0]
+		latestShot: latestShot.data[0]
 	};
 }
