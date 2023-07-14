@@ -2,4 +2,6 @@
 	import '../index.css';
 </script>
 
-<slot />
+<div class="mx-auto container px-4">
+	<slot />
+</div>
